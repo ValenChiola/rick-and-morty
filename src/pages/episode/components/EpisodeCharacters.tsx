@@ -33,7 +33,9 @@ export const EpisodeCharacters = ({ charactersUrls }: { charactersUrls: string[]
       <h3>
         Personajes:
       </h3>
-      <Characters characters={characters} />
+      <div className="mt-3">
+        <Characters characters={characters} />
+      </div>
     </div>
   )
 }

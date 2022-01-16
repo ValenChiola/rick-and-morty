@@ -29,7 +29,7 @@ export const CharacterEpisodes = ({ episodeUrls }: { episodeUrls: string[] }) =>
   }
 
   return (
-    <div>
+    <>
       Episodios: {
         episodes.map(({ id, name }) => (
           <div key={id}>
@@ -37,6 +37,6 @@ export const CharacterEpisodes = ({ episodeUrls }: { episodeUrls: string[] }) =>
           </div>
         ))
       }
-    </div>
+    </>
   )
 }

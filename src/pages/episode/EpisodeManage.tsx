@@ -3,6 +3,7 @@ import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 import { Episode } from '../../interfaces/episode'
 import { getEpisode } from './api'
+import { EpisodeCharacters } from './components/EpisodeCharacters'
 import { EpisodeInfo } from './components/EpisodeInfo'
 
 export const EpisodeManage = () => {
@@ -16,5 +17,10 @@ export const EpisodeManage = () => {
 
   if (!data) return <div>No hay existe un episodio con el id {id}</div>
 
-  return <EpisodeInfo {...data} />
+  return (
+    <div style={{ margin: '2em 4.5em' }}>
+      <EpisodeInfo {...data} />
+      <EpisodeCharacters charactersUrls={data.characters} />
+    </div>
+  )
 }

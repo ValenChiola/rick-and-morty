@@ -6,6 +6,7 @@ import { Character } from '../../interfaces/rickandmorty';
 import { CharacterCard } from '../../components/CharacterCard';
 import { CharacterInfo } from './components/CharacterInfo';
 import { Link } from 'react-router-dom';
+import { CharacterEpisodes } from './components/CharacterEpisodes';
 
 export const CharacterManage = () => {
 
@@ -23,7 +24,10 @@ export const CharacterManage = () => {
       <Link className="btn btn-primary mb-4" to={'/'}>Ir al Inicio</Link>
       <div className="d-flex" style={{ maxHeight: 500, wordBreak: 'break-word' }}>
         <CharacterCard {...data} />
-        <CharacterInfo {...data} />
+        <div className="mx-5">
+          <CharacterInfo {...data} />
+          <CharacterEpisodes episodeUrls={data.episode} />
+        </div>
       </div>
     </div>
   )
