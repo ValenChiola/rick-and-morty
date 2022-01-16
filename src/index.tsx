@@ -1,17 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { CharacterManage } from './pages/character/CharacterManage';
+import { EpisodeManage } from './pages/episode/EpisodeManage';
+
+const queryClient = new QueryClient()
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/character/:id" element={<CharacterManage />} />
+          <Route path="/episode/:id" element={<EpisodeManage />} />
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
