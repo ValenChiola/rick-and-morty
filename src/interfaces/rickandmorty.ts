@@ -1,4 +1,8 @@
-export interface GetAll {
+export interface GetAll extends Response {
+  error?: string;
+}
+
+interface Response {
   info: Info;
   results: Character[];
 }
