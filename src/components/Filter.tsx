@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
 
-export const Filter = ({ onSubmit, onChange, style }: Props) => {
+export const Filter = ({ onSubmit, onChange, ...props }: Props) => {
 
   const inputRef = useRef<HTMLInputElement>(null)
 
   return (
-    <nav style={style} className="navbar navbar-light bg-light">
+    <nav {...props} className="navbar navbar-light bg-light">
       <div className="container-fluid">
         <form className="d-flex" onSubmit={(e) => {
           e.preventDefault()
