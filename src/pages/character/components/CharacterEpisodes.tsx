@@ -25,7 +25,7 @@ export const CharacterEpisodes = ({ episodeUrls }: { episodeUrls: string[] }) =>
   }
 
   if (isError) {
-    return <p>Hubo un error al cargar los personajes</p>
+    return <p>Hubo un error al cargar los episodios</p>
   }
 
   return (
